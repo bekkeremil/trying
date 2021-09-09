@@ -3,11 +3,18 @@ import numpy as np
 import time
 from datetime import datetime
 import requests
+import pip
+try:
+    __import__(azure.storage.blob)
+except ImportError:
+    pip.main(['install', azure.storage.blob])   
 from azure.storage.blob import ContainerClient
 from azure.storage.blob import BlobServiceClient
 from azure.storage.blob import BlobClient
 from azure.storage.blob import ContentSettings
 import json
+
+ 
 
 vcap = cv2.VideoCapture("rtsp://nvidia:nvidia@192.168.87.184/axis-media/media.amp")
 
