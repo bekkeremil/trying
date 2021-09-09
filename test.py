@@ -6,9 +6,9 @@ from datetime import datetime
 import requests
 import pip
 try:
-    __import__("azure.storage.blob")
+    __import__('azure.storage.blob')
 except ImportError:
-    pip.main(['install', "azure.storage.blob"])   
+    pip.main(['install', 'azure.storage.blob'])   
 from azure.storage.blob import ContainerClient
 from azure.storage.blob import BlobServiceClient
 from azure.storage.blob import BlobClient
